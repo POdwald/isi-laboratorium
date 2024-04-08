@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json
 import multiprocessing  # Just for opening both pyplot and tkinter apps at the same time
-# Specifically for showing weather condition app
+"""Imports specifically for showing weather condition app"""
 import tkinter as tk
 from tkinter import ttk
 
@@ -55,7 +55,7 @@ def format_weather_codes(weather_codes):
 def show_weather_condition_interface(dates, weather_codes):
     """Displays a window with given dates and weather_codes"""
     root = tk.Tk()
-    root.title("Weather Information")
+    root.title('Weather Information')
 
     num_items = len(dates)
     num_columns = 4
@@ -95,7 +95,6 @@ def show_weather_status(weather_data):
     # Waiting for both processes to finish
     temperature_plot_process.join()
     weather_condition_window_process.join()
-
 
 if __name__ == '__main__':
     params = {
