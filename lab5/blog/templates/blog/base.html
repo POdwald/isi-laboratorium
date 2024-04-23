@@ -10,14 +10,9 @@
     <body>
     <div class="page-header">
         {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="top-menu">{% include './icons/person-fill.svg' %}</a>
             <a href="{% url 'post_new' %}" class="top-menu">{% include './icons/file-earmark-plus.svg' %}</a>
-            <p><a href="{% url 'password_change' %}">Password Change</a></p>
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Log Out</button>
-            </form>
         {% else %}
-            <p><a href="{% url 'password_reset' %}">Password Reset</a></p>
             <a href="{% url 'login' %}" class="top-menu">{% include './icons/lock.svg' %}</a>
         {% endif %}
         <h1><a href="/">Django Girls Blog</a></h1>
