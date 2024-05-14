@@ -1,3 +1,5 @@
 .venv
+
 *.log
 *.pid
+.env
